@@ -1,0 +1,443 @@
+/* App.css */
+:root {
+  --bg: #121212;          
+  --text: #ffffff;       
+  --accent: #3a3a3a;      
+  --card-bg: #2a2a2a;     
+  --input-bg: #2a2a2a;    
+  --border: #444;        
+}
+
+/* Light mode overrides */
+.app.light {
+  --bg: #f4f4f4;
+  --text: #111;
+  --accent: #a6c3ef;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --border: #ccc;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+}
+
+
+.app {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+#root {
+  width: 100%;
+}
+
+.header {
+  background-color: #2c3e50;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content:space-between ;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+/* Center all sections and give consistent spacing */
+section {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: all 0.4s ease-in;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta {
+  background-color:var(--accent);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color:var(--input-bg);
+}
+
+.typing {
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for typewriter effect */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(60, end) infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 41ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* How It Works */
+.how-it-works h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.step {
+  flex: 1 1 200px;
+  height: 180px;
+  background-color:var(--accent);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* Why Choose Us */
+.why-choose-us h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.why-choose-us ul {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1rem .1rem; 
+  justify-items: center;
+
+}
+
+.why-choose-us li {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+/* Testimonials */
+.testimonials h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial {
+  position: relative; 
+  margin-bottom: 1.5rem;
+  background-color: var(--accent);
+  padding: 2.5rem 1rem 1rem 1rem; 
+  border-radius: 10px;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 300px;
+  min-height: 180px;
+  
+}
+
+.quote-icon {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  color: var(--text);
+}
+
+.testimonial p {
+  margin: 1rem;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.testimonial-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ContactForm */
+.contact {
+  text-align: center;
+}
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto 0 auto;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--text);
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.toggle-btn {
+  padding: 0.2rem 0.5rem;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .cta {
+    font-size: 0.9rem;
+  }
+
+  .how-it-works h2,
+  .why-choose-us h2,
+  .testimonials h2,
+  .contact h2 {
+    font-size: 1.4rem;
+  }
+
+  .steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .step {
+    width: 100px;
+    height: 120px;
+    font-size: 0.8rem;
+  }
+
+  .why-choose-us ul {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    justify-items: center;
+    gap: 0.5rem;
+  }
+
+  .why-choose-us li {
+    font-size: 1rem;
+  }
+
+  .testimonial-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .testimonial span {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .toggle-btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cta {
+    font-size: 1rem;
+  }
+
+  .step {
+    width: 150px;
+    height: 140px;
+    font-size: 0.9rem;
+  }
+
+  .why-choose-us ul {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .why-choose-us li {
+    font-size: 1.1rem;
+  }
+
+  .testimonial {
+    font-size: 1rem;
+    width: 280px;
+  }
+
+  .testimonial span {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .cta {
+    font-size: 1.1rem;
+  }
+
+  .step {
+    width: 200px;
+    height: 180px;
+    font-size: 1rem;
+  }
+
+  .why-choose-us ul {
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+  }
+
+  .why-choose-us li {
+    font-size: 1.2rem;
+  }
+
+  .testimonial {
+    width: 300px;
+    font-size: 1.1rem;
+  }
+
+  .testimonial span {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 1.1rem;
+  }
+
+}
